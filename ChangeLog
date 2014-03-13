@@ -1,0 +1,29 @@
+2009-03-01	martin rumori <osc AT rumori DOT de>
+	* added pattern matching fix from Stephen Sinclair
+	* added ugly hyperswap patch for mac os compatibility
+	* released version 0.10.2 
+
+2004-08-02	martin rumori	<martin AT rumori.de>
+	* reviewed build system
+
+26 Feb. 2003:
+Portability fixes. Since this libOSC++ uses IPv6 in actuality, it will
+probably never run on MacOS 10.1; but it should compile on Jaguar.
+- jared
+05 Feb. 2003:
+This is the fraunhofer version of libOSC++, placed into an automake project.
+- dwh
+04 Feb 2003:
+Reorganizing the project.  libOSC++ is now distributed alone. - dwh
+09 May 2002:
+preliminary automake build system added
+documentation revised and expanded
+12 Nov. 2002:
+Transmit object given clone() ability to facilitate #bundle handling.
+*** The Transmit object created so callbacks can reply is now deleted
+in UDPTransmit.cc - a few lines after it is created.  This means that
+callbacks that wish to keep this reply object must clone it for later
+use.  Example: Broadcaster
+Broadcaster now clones its own personal Transmit object.
+uniKit/Makefile.am simplified
+- dwh

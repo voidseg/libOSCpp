@@ -1,0 +1,10 @@
+Code to test this OSC implementation
+
+glob and pattern.py should produce identical output.
+
+Decided to get a good free implementation of globbing, instead of trying
+to debug my buggy one. glob.cc and pattern.py don't work, oscmatch.cc
+works quite well.
+
+mikmodserver absolutely requires monaural uncompressed wav files. any
+other kind of sample will cause it to crash on /play

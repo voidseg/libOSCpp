@@ -1,0 +1,5 @@
+The documentation is a bit outdated and far from complete. Next release? :)
+
+This distribution of the oscserver is linked statically with libOSC++;
+therefore libosc++0 is a build dependency, but not a normal dependency. 
+

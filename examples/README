@@ -1,0 +1,6 @@
+# libOSC++/examples/README
+# 2004-08-02 rumori
+
+some simple examples showing how to use the network classes of libOSC++
+
+simply type 'make' in the examples/ directory to build them.

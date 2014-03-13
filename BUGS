@@ -1,0 +1,13 @@
+- OSCServer does not set a port by default (if -p omitted)
+> fixed, 19 apr. 2002, dwh
+- 'Transmit' objects not properly deleted (should be at tail of call
+  chain), else memory leaks
+- Callbacks have zero documentation by default
+- Some abstract superclasses may not have implementations of destructors,
+  making it impossible to polymorphically destruct their specializations.
+- 'skip' methods in unpacker unimplemented (mostly fixed but untested)
+- byteswapping not implemented for hypers in packer, unpacker
+- #bundle not implemented (make a special callback, careful with Transmit
+  object)
+- round-robin streams cause strange string corruption
+- Broadcaster is a Transmit object but it cannot clone itself.

@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword xmlns:awml="http://www.abisource.com/awml.dtd" version="0.9.4.1" fileformat="1.0">
+<!-- =====================================================================  -->
+<!-- This file is an AbiWord document.                                      -->
+<!-- AbiWord is a free, Open Source word processor.                         -->
+<!-- You may obtain more information about AbiWord at www.abisource.com     -->
+<!-- You should not edit this file by hand.                                 -->
+<!-- =====================================================================  -->
+
+<styles>
+<s type="P" basedon="" followedby="Current Settings" name="Normal" props="font-family:Times New Roman; margin-top:0pt; font-style:normal; margin-left:0pt; text-position:normal; widows:2; text-align:left; font-weight:normal; font-variant:normal; margin-right:0pt; color:000000; line-height:1.000000; text-decoration:none; margin-bottom:0pt; text-indent:0in; bgcolor:transparent; font-size:12pt; font-stretch:normal; field-font:NULL"/>
+</styles>
+<pagesize pagetype="Letter" orientation="portrait" width="8.500000" height="11.000000" units="inch" page-scale="1.000000"/>
+<section>
+<p style="Normal"><c props="lang:en-US; font-weight:bold; font-family:Courier">ProctoLogic Manual Version 0.42a</c></p>
+<p style="Normal"><c props="lang:en-US; font-weight:bold; font-family:Courier"></c></p>
+<p style="Normal"><c props="lang:en-US; font-weight:bold; font-family:Courier">-- NOTE:  This is a work in progress.  Some or all of the features described below do not exist. --</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">TOC</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">4. Creating inputs</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">4.1 with C</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">4.2 with C++</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">4.3 with Python</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">4.4 with Java</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">Max, supercollider</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">So you wanna program for ProctoLogic?</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">Input</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	- Make sure you have the PL lib installed.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	- Go to the directory and open </c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">Output</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">Phase 1: What kind of output you want to generate</c></p>
+<p style="Normal"></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">If using C, write a function that resembles the example function pictured below:</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">char *callback_info = "Expects an int, a float and a string.  Prints them.";</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">void callback(void *context, OSCDataMessage *data, Transmit *reply)</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">{</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	int   firstArgument;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	float secondArgument;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	char* thirdArgument;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	int error;</c></p>
+<p style="Normal">	</p>
+<p style="Normal">	// Getting the first argument (assuming it's an integer)</p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	error = OSCUnpackInt(data,&amp;firstArgument);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	if(error != 0)</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	{</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">		printf("First argument was not of expected type: int");</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">		return;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	}</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	// Getting the second argument</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	error = OSCUnpackFloat(data, &amp;secondArgument);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	if(error != 0)</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	{</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">		printf("Second argument was not of expected type: float");</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">		return;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	}</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	// Getting the third argument</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	error = OSCUnpackString(data, &amp;thirdArgument);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	if(error != 0)</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	</c><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">{</c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">		printf(Third argument was not of expected type: char*");</c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">		return;</c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">	 }</c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US"></c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">	// Now that you have your arguments, do with them </c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; font-size:12pt; color:000000; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none">	// what you will.</c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; font-size:12pt; color:000000; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none"></c></p>
+<p style="Normal" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Courier; font-size:12pt; color:000000; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none">	printf("This is the first arg: %d \n",firstArgument);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">	</c><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">printf("This is the second arg: %f \n",secondArgument);</c></p>
+<p style="Normal"><c props="font-family:Courier; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">	printf("This is the third arg: %s \n",thirdArgument);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">}</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">Phase 2: Hooking it up to PL</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">Look at example server, and create a new OSCFunctionCallable.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// Included so C++ knows about our callback</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">#include "c_callback.h"</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">#define PORT 4950;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">int main(int argc, char** argv)</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">{</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">OSCServer *server;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">OSCFunctionCallback *functionCallback;</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">server = new OSCServer(PORT);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">functionCallback = new OSCFunctionCallback();</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// We'll set the context to NULL here, because </c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// our function doesn't need any extra information.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">functionCallback-&gt;setFunction(callback, NULL);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// Now, we add our function to the server's OSC namespace.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// You can add the same OSCFunctionCallback to the server</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// more than once if you want it to have another name.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// Since we have defined callback_info, we can ask the server for</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// documentation on that function while it's running.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">OSCServer-&gt;addCallback("/example/c_callback", functionCallback, callback_info);</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// Here we go... we will have to interrupt this program to make</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// it quit.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">OSCServer-&gt;serveForever();</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">// Now that your server is running, use an InputClient to send it // information.</c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US"></c></p>
+<p style="Normal"><c props="font-family:Courier; lang:en-US">}</c></p>
+</section>
+</abiword>

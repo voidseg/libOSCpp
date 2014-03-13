@@ -1,0 +1,48 @@
+libosc++ (0.10.1+svn432) unstable; urgency=medium
+
+  * reply behavior fix made default
+  * reply behavior bugs fixed
+  * svn repository versions instead of dates; less unwieldy
+
+ -- Jared Jennings <jjenning@fastmail.fm>  Tue, 23 Nov 2004 02:32:06 -0500
+
+libosc++ (0.10.1+svn20041122-0.1) unstable; urgency=low
+
+  * pattern matching added upstream.
+  * svn version numbering begun
+
+ -- Jared Jennings <jjenning@fastmail.fm>  Mon, 22 Nov 2004 03:55:23 -0400
+
+libosc++ (0.10.1-0.1) unstable; urgency=medium
+
+  * reply behavior fixed
+  * move to new VCS
+
+ -- Jared Jennings <jjenning@fastmail.fm>  Fri, 22 Oct 2004 16:28:00 -0400
+
+libosc++ (0.9.3-0.1) unstable; urgency=medium
+
+  * fixed unsubscribing/resubscribing bug.
+      present behavior:
+      unsubscribing works normally.
+	  if you send a subscribe request and you're already subscribed, your
+	  timeout is reset, thus 'renewing' your subscription.
+
+ -- Jared Jennings <jjenning@fastmail.fm>  Sun, 17 Aug 2003 18:56:39 -0400
+
+libosc++ (0.9.2-0.1) unstable; urgency=low
+
+  * figured out unofficial packaging, thanks to
+	  http://people.debian.org/~calvin/unofficial
+
+  * fixed showstopper bug that caused oscserver to crash when clients
+	  unsubscribe from channels.
+
+ -- Jared Jennings <jjenning@fastmail.fm>  Wed, 13 Aug 2003 01:25:17 -0400
+
+libosc++ (0.9.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- jared jennings <jjenning@fastmail.fm>  Fri, 27 Jun 2003 01:22:04 -0400
+

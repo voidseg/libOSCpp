@@ -1,0 +1,11 @@
+Document: libosc++0-dev
+Title: Debian libosc++0-dev Manual
+Author: Daniel Holth and Clinton McChesney
+Abstract: This manual describes what the OSC++ library is and how it can be
+          used to create artistic programs that use the network. Unfortunately
+          it's a bit outdated.
+Section: libdevel
+
+Format: HTML
+Files: /usr/share/doc/libosc++0-dev/UserManual.html
+Index: /usr/share/doc/libosc++0-dev/UserManual.html
