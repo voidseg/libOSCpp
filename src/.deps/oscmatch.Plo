@@ -1,8 +1,0 @@
-oscmatch.lo: oscmatch.cc /usr/include/stdc-predef.h \
- /usr/include/x86_64-linux-gnu/bits/predefs.h ../include/oscmatch.h
-
-/usr/include/stdc-predef.h:
-
-/usr/include/x86_64-linux-gnu/bits/predefs.h:
-
-../include/oscmatch.h:
